@@ -1,0 +1,8 @@
+---
+global:
+  image:
+    tag: "v3.0.11"
+
+server:
+  extraArgs:
+    - --insecure
