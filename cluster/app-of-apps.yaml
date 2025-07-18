@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/wojtacha/cluster.proxima-centauri.git
     targetRevision: master
-    path: nginx-entry
+    path: cluster/nginx-entry
   destination:
     server: https://kubernetes.default.svc
     namespace: app1
