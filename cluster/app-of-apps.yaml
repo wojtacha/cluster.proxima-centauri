@@ -11,10 +11,25 @@ spec:
     path: cluster/nginx-entry
   destination:
     server: https://kubernetes.default.svc
-    namespace: app1
   syncPolicy:
     automated: {}
-# ---
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-utils
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/wojtacha/cluster.proxima-centauri.git
+    targetRevision: master
+    path: cluster/argocd
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated: {}
 # apiVersion: argoproj.io/v1alpha1
 # kind: Application
 # metadata:
