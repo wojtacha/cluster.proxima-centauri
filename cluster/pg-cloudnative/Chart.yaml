@@ -1,0 +1,11 @@
+apiVersion: v2
+name: cloudnative-pg-umbrella
+description: An umbrella chart that includes cloudnative-pg as a subchart
+type: application
+version: 0.1.0
+appVersion: "1.0"
+
+dependencies:
+  - name: cloudnative-pg
+    version: 1.26.0
+    repository: https://github.com/cloudnative-pg/charts.git
