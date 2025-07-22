@@ -30,11 +30,13 @@ spec:
     targetRevision: v0.15.2
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: metallb-system
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+      syncOptions:
+        - CreateNamespace=true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
