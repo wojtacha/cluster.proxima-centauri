@@ -35,8 +35,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
-      syncOptions:
-        - CreateNamespace=true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -46,13 +44,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/rancher/local-path-provisioner.git
-    repoURL: https://github.com/wojtacha/cluster.proxima-centauri.git 
+    repoURL: https://github.com/wojtacha/cluster.proxima-centauri.git
     path: cluster/local-storage-class
-    targetRevision: v0.0.31
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: local-storage-class
   syncPolicy:
     automated:
       prune: true

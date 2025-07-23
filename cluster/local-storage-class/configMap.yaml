@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: local-path-config
-  namespace: local-path-storage
+  namespace: local-storage-class
 data:
   config.json: |-
     {
