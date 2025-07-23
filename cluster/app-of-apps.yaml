@@ -47,7 +47,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/rancher/local-path-provisioner.git
-    path: deploy
+    repoURL: https://github.com/wojtacha/cluster.proxima-centauri.git 
+    path: cluster/local-storage-class
     targetRevision: v0.0.31
   destination:
     server: https://kubernetes.default.svc
