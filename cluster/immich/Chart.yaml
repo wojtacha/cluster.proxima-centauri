@@ -9,4 +9,4 @@ dependencies:
   - name: immich
     alias: immich-chart
     version: 0.9.3
-    repository: https://github.com/immich-app/immich-charts/tree/main/charts/immich
+    repository: https://immich-app.github.io/immich-charts
