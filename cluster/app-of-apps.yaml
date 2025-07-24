@@ -36,31 +36,31 @@ spec:
       prune: true
       selfHeal: true
 ---
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: local-storage-class
-#   namespace: argocd
-# spec:
-#   project: default
-#   source:
-#     repoURL: https://github.com/rancher/local-path-provisioner.git
-#     path: deploy/chart
-#     targetRevision: v0.0.31
-#     helm:
-#       values: |
-#         nodePathMap:
-#           - node: DEFAULT_PATH_FOR_NON_LISTED_NODES
-#             paths:
-#               - /data
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: local-path-storage
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-# ---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: local-storage-class
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rancher/local-path-provisioner.git
+    path: deploy/chart
+    targetRevision: v0.0.31
+    helm:
+      values: |
+        nodePathMap:
+          - node: DEFAULT_PATH_FOR_NON_LISTED_NODES
+            paths:
+              - /data
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: local-path-storage
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
