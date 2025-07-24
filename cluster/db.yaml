@@ -15,13 +15,3 @@ spec:
       owner: admin
       secret:
         name: immich-db-secret
----
-apiVersion: postgresql.cnpg.io/v1
-kind: Database
-metadata:
-  name: immich-postgres
-  namespace: immich
-spec:
-  cluster: immich-db
-  name: immichphotos
-  owner: admin
