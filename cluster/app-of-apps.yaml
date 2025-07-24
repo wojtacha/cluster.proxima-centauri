@@ -76,8 +76,10 @@ spec:
     path: cluster/pg-cloudnative
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: cloud-pg-operator
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
