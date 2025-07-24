@@ -1,0 +1,12 @@
+apiVersion: v2
+name: immich-umbrella-chart
+description: An umbrella chart that includes immich as a subchart
+type: application
+version: 0.1.0
+appVersion: "1.0"
+
+dependencies:
+  - name: immich
+    alias: immich-chart
+    version: 0.9.3
+    repository: https://github.com/immich-app/immich-charts/tree/main/charts/immich
