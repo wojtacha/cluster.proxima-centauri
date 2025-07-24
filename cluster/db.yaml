@@ -1,9 +1,27 @@
 apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: immich-db
+  namespace: immich
+spec:
+  instances: 1
+  primaryUpdateStrategy: unsupervised
+  storage:
+    storageClass: local-path # or "standard" or "longhorn" depending on your setup
+    size: 10Gi
+  bootstrap:
+    initdb:
+      database: immichphotos
+      owner: admin
+      secret:
+        name: immich-db-secret
+---
+apiVersion: postgresql.cnpg.io/v1
 kind: Database
 metadata:
   name: immich-postgres
   namespace: immich
 spec:
-  cluster: my-cluster
-  dbName: immichphotos
+  cluster: immich-db
+  name: immichphotos
   owner: admin
