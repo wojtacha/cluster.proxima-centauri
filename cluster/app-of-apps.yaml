@@ -36,24 +36,6 @@ spec:
       prune: true
       selfHeal: true
 ---
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: local-storage-class
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/wojtacha/cluster.proxima-centauri.git
-    path: cluster/local-storage-class
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: local-storage-class
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
----
 # apiVersion: argoproj.io/v1alpha1
 # kind: Application
 # metadata:
