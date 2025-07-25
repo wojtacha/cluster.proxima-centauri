@@ -18,7 +18,29 @@ resource "kubernetes_manifest" "argocd_app" {
         namespace = "default"
       }
       syncPolicy = {
-        automated = {}
+        automated = {
+          prune      = true
+          selfHeal   = true
+          allowEmpty = false
+        }
+
+        retry = {
+          limit = 5
+
+          backoff = {
+            duration    = "10s"
+            factor      = 2
+            maxDuration = "3m"
+          }
+        }
+
+        syncOptions = [
+          "CreateNamespace=true",
+          "ApplyOutOfSyncOnly=true",
+          "ServerSideApply=true",
+          "PrunePropagationPolicy=foreground",
+          "PruneLast=true"
+        ]
       }
     }
   }
