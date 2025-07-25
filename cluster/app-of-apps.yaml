@@ -71,7 +71,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://metallb.github.io/metallb
+    repoURL: https://kubernetes.github.io/dashboard
     chart: kubernetes-dashboard
     targetRevision: 7.13.0
   destination:
