@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: "tensorchord/pgvecto-rs:latest"
+          image: ghcr.io/tensorchord/pgvecto-rs:pg17-v0.4.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5432
