@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: immich
+  name: pvc-immich
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 180Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: immich-lb-svc
+  namespace: immich
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 192.168.100.208
+  selector:
+    app.kubernetes.io/instance: immich-package
+    app.kubernetes.io/name: server
+  ports:
+    - port: 80
+      targetPort: 2283

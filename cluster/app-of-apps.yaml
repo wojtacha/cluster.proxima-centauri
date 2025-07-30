@@ -16,6 +16,7 @@ spec:
     automated:
       prune: true
       selfHeal: true
+# metallb
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -35,6 +36,7 @@ spec:
     automated:
       prune: true
       selfHeal: true
+
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -62,6 +64,7 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+# dashboard
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -83,6 +86,7 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+# immich photos
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
