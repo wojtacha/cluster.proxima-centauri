@@ -12,19 +12,6 @@ spec:
       storage: 180Gi
 ---
 apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  namespace: immich
-  name: pvc-immich-1
-spec:
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: local-path
-  resources:
-    requests:
-      storage: 150Gi
----
-apiVersion: v1
 kind: Service
 metadata:
   name: immich-lb-svc
