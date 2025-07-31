@@ -30,7 +30,9 @@ immich-chart:
     # ref: https://immich.app/docs/install/config-file/
     #
     configuration:
-      {}
+      machineLearning:
+        enabled: false
+
       # trash:
       #   enabled: false
       #   days: 30
