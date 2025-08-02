@@ -73,12 +73,14 @@ immich-chart:
       enabled: false
 
   # Immich components
-
   server:
     enabled: true
     image:
       repository: ghcr.io/immich-app/immich-server
-      pullPolicy: IfNotPresent
+    pullPolicy: IfNotPresent
+    controller:
+      replicas: 3
+      strategy: RollingUpdate
     ingress:
       main:
         enabled: false
