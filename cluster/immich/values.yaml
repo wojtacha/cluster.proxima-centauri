@@ -11,10 +11,10 @@ immich-chart:
     DB_DATABASE_NAME: "immich"
     # -- You should provide your own secret outside of this helm-chart and use `postgresql.global.postgresql.auth.existingSecret` to provide credentials to the postgresql instance
     DB_PASSWORD: "password"
-    IMMICH_MACHINE_LEARNING_URL: '{{ printf "http://%s-machine-learning:3003" .Release.Name }}'
+    IMMICH_MACHINE_LEARNING_URL: "machine-lerarning-service"
 
   image:
-    tag: v1.119.0
+    tag: v1.137.3
 
   immich:
     metrics:
@@ -31,7 +31,7 @@ immich-chart:
     #
     configuration:
       machineLearning:
-        enabled: false
+        enabled: true
 
       # trash:
       #   enabled: false
