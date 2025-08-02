@@ -29,7 +29,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: machine-lerarning-service
+  name: machine-learning-service
 spec:
   ports:
     - port: 3003
@@ -39,7 +39,7 @@ spec:
 apiVersion: v1
 kind: Endpoints
 metadata:
-  name: machine-lerarning-endpoint
+  name: machine-lerarning-service
 subsets:
   - addresses:
       - ip: 192.168.100.244
