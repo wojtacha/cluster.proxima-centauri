@@ -29,7 +29,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: machine-learning-service
+  name: test-service
+  namespace: immich
 spec:
   ports:
     - port: 3003
@@ -39,7 +40,8 @@ spec:
 apiVersion: v1
 kind: Endpoints
 metadata:
-  name: machine-lerarning-service
+  name: test-service
+  namespace: immich
 subsets:
   - addresses:
       - ip: 192.168.100.244
