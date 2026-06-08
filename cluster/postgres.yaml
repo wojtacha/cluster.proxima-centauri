@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: ghcr.io/tensorchord/pgvecto-rs:pg16-v0.3.0
+          image: ghcr.io/immich-app/postgres:16-vectorchord0.3.0-pgvectors0.3.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5432
