@@ -25,25 +25,3 @@ spec:
   ports:
     - port: 80
       targetPort: 2283
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: test-service
-  namespace: immich
-spec:
-  ports:
-    - port: 3003
-      targetPort: 3003
-  clusterIP: None
----
-apiVersion: v1
-kind: Endpoints
-metadata:
-  name: test-service
-  namespace: immich
-subsets:
-  - addresses:
-      - ip: 192.168.100.244
-    ports:
-      - port: 3003
