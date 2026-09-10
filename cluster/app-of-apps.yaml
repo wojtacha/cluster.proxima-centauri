@@ -90,6 +90,28 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+# jellyfin media server
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jellyfin
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/wojtacha/cluster.proxima-centauri.git
+    targetRevision: master
+    path: cluster/jellyfin
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jellyfin
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
 # tailscale subnet router
 ---
 apiVersion: argoproj.io/v1alpha1
